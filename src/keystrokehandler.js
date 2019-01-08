@@ -126,5 +126,6 @@ export default class KeystrokeHandler {
 	 */
 	destroy() {
 		this._listener.stopListening();
+		this._listener = null;
 	}
 }

@@ -94,6 +94,14 @@ export default class FocusTracker {
 		}
 	}
 
+	destroy() {
+		this.stopListening();
+		this.focusedElement = null;
+		this._elements.clear();
+		this._elements = null;
+		clearTimeout( this._nextEventLoopTimeout );
+	}
+
 	/**
 	 * Stores currently focused element and set {#isFocused} as `true`.
 	 *
